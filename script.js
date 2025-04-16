@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", function () {
         colorblind: ["#440154", "#31688e", "#35b779", "#fde725", "#ff9100"]
     };
 
-    d3.csv("crime_data.csv").then(rawData => {
+    d3.csv("crime_data_filtered.csv").then(rawData => {
         rawData = rawData.filter(d => d.Measure === "Offences");
 
         const nested = d3.rollup(
