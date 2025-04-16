@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>London Crime Dashboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="script.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h2 class="app=app-title">🔍 London's Top Boroughs by Offence</h2>
+  <div class="hover-label" id="hoverLabel"></div>
+  <div class="controls">
+    <div>
+      <label for="offence-select">Offence Type:</label>
+      <select id="offence-select" class="dropdown"></select>
+    </div>
+    <div>
+      <label for="palette-select">Color Palette:</label>
+      <select id="palette-select" class="dropdown">
+        <option value="default">Default</option>
+        <option value="colorblind">Colorblind-Friendly</option>
+      </select>
+    </div>
+    <div class="dark-toggle">
+        <label>Dark Mode</label>
+        <label class="switch">
+            <input type="checkbox" id="darkModeToggle">
+            <span class="slider"></span>
+        </label>
+    </div>
+  </div>
+  <div id="chart"></div>
+  <div class="legend">
+    <span class="legend-label">Low</span>
+    <div>
+      <div class="legend-bar" id="legend-bar">Default</div>
+      <div class="legend-ticks" id="legend-ticks"></div>
+      <div class="legend-bar-cblind" id="legend-bar-cblind" style= "display: none;">Colorblind-Friendly</div>
+    </div>
+    <span class="legend-label">High</span>
+  </div>
+  <div class="tooltip" id="tooltip"></div>
+  <footer>
+    © 2025 Debaditya Bhattacharjee | K24087561 | Data Visualization | King’s College London
+  </footer>  
+</body>
+</html>
