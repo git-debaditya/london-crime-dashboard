@@ -42,13 +42,11 @@ document.addEventListener("DOMContentLoaded", function () {
             .attr("value", d => d)
             .text(d => d);
 
-        document.getElementById("loader").style.display = "none";
+        // Loader fade out
         const loader = document.getElementById("loader");
         loader.style.transition = "opacity 0.5s ease";
         loader.style.opacity = 0;
         setTimeout(() => loader.style.display = "none", 200);
-
-        let firstLoad = true;
 
         updateChart(offenceGroups[0], true);
 
