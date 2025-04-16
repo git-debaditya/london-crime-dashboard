@@ -2,6 +2,7 @@ document.addEventListener("DOMContentLoaded", function () {
     document.getElementById("darkModeToggle").addEventListener("change", function () {
             document.body.classList.toggle("dark-mode", this.checked);
     });
+})
     const margin = { top: 20, right: 60, bottom: 50, left: 150 },
                 width = 1380 - margin.left - margin.right,
                 height = 600 - margin.top - margin.bottom;
@@ -207,4 +208,3 @@ document.addEventListener("DOMContentLoaded", function () {
                 .remove();
         }
     });
-});
