@@ -42,6 +42,8 @@ document.addEventListener("DOMContentLoaded", function () {
             .attr("value", d => d)
             .text(d => d);
 
+        document.getElementById("loader").style.display = "none";
+        
         let firstLoad = true;
 
         updateChart(offenceGroups[0], true);
