@@ -1,5 +1,3 @@
-<script src="https://d3js.org/d3.v7.min.js"></script>
-//Dark Mode Toggle
 document.addEventListener("DOMContentLoaded", function () {
     document.getElementById("darkModeToggle").addEventListener("change", function () {
             document.body.classList.toggle("dark-mode", this.checked);
