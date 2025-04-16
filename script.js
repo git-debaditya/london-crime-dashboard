@@ -2,7 +2,6 @@ document.addEventListener("DOMContentLoaded", function () {
     document.getElementById("darkModeToggle").addEventListener("change", function () {
             document.body.classList.toggle("dark-mode", this.checked);
     });
-})
     const margin = { top: 20, right: 60, bottom: 50, left: 150 },
                 width = 1380 - margin.left - margin.right,
                 height = 600 - margin.top - margin.bottom;
@@ -42,12 +41,6 @@ document.addEventListener("DOMContentLoaded", function () {
             .join("option")
             .attr("value", d => d)
             .text(d => d);
-
-        document.getElementById("loader").style.display = "none";
-        const loader = document.getElementById("loader");
-        loader.style.transition = "opacity 0.5s ease";
-        loader.style.opacity = 0;
-        setTimeout(() => loader.style.display = "none", 500);
 
         let firstLoad = true;
 
@@ -212,3 +205,4 @@ document.addEventListener("DOMContentLoaded", function () {
                 .remove();
         }
     });
+});
