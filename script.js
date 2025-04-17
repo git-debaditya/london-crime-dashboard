@@ -22,8 +22,13 @@ document.addEventListener("DOMContentLoaded", function () {
         colorblind: ["#440154", "#31688e", "#35b779", "#fde725", "#ff9100"]
     };
 
-    d3.csv("crime_data_filtered.csv").then(rawData => {
-        rawData = rawData.filter(d => d.Measure === "Offences");
+    d3.csv("crime_data_filtered_cleaned.csv").then(rawData => {
+        rawData = rawData.filter(d => 
+            d["Measure"] === "Offences" &&
+            d["Offence Group"] !== "Other / NK" &&
+            d["Area name"] !== "Other / NK" &&
+            !isNaN(+d.Count)
+        );
 
         const nested = d3.rollup(
             rawData,
@@ -42,7 +47,11 @@ document.addEventListener("DOMContentLoaded", function () {
             .attr("value", d => d)
             .text(d => d);
 
-        let firstLoad = true;
+        // Loader fade out
+        const loader = document.getElementById("loader");
+        loader.style.transition = "opacity 0.5s ease";
+        loader.style.opacity = 0;
+        setTimeout(() => loader.style.display = "none", 200);
 
         updateChart(offenceGroups[0], true);
 
