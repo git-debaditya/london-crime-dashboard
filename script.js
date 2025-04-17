@@ -23,16 +23,18 @@ document.addEventListener("DOMContentLoaded", function () {
     };
 
     d3.csv("crime_data_filtered_cleaned.csv").then(rawData => {
-        rawData = rawData.filter(d => d["Offence Group"] !== "Other / NK");
-        rawData = rawData.filter(d => d["Area name"] !== "Other / NK");
-        rawData = rawData.filter(d => d.Measure === "Offences");
+        rawData = rawData.filter(d => 
+            d["Measure"] === "Offences" &&
+            d["Offence Group"] !== "Other / NK" &&
+            d["Area name"] !== "Other / NK" &&
+            !isNaN(+d.Count)
+        );
 
         const nested = d3.rollup(
             rawData,
             v => d3.sum(v, d => +d.Count),
             d => d["Offence Group"],
-            d => d["Area name"],
-            !isNaN(d.Count)
+            d => d["Area name"]
         );
 
         const offenceGroups = Array.from(nested.keys()).sort();
