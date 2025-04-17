@@ -32,9 +32,10 @@ body.dark-mode #loader {
     background: #111;
     color: #eee;
 }
-body.dark-mode details p {
-    background-color: rgba(255,255,255,0.9);
-    color: rgba(30,30,30,0.8);
+body.dark-mode details p,
+summary {
+    color: rgba(255,255,255,0.9);
+    background-color: rgba(30,30,30,0.8);
     transition: background-color 0.5s, color 0.3s ease;
 }
 body.dark-mode details a{
