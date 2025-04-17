@@ -22,14 +22,17 @@ document.addEventListener("DOMContentLoaded", function () {
         colorblind: ["#440154", "#31688e", "#35b779", "#fde725", "#ff9100"]
     };
 
-    d3.csv("crime_data_filtered.csv").then(rawData => {
+    d3.csv("crime_data_filtered_cleaned.csv").then(rawData => {
+        rawData = rawData.filter(d => d["Offence Group"] !== "Other / NK");
+        rawData = rawData.filter(d => d["Area name"] !== "Other / NK");
         rawData = rawData.filter(d => d.Measure === "Offences");
 
         const nested = d3.rollup(
             rawData,
             v => d3.sum(v, d => +d.Count),
             d => d["Offence Group"],
-            d => d["Area name"]
+            d => d["Area name"],
+            !isNaN(d.Count)
         );
 
         const offenceGroups = Array.from(nested.keys()).sort();
