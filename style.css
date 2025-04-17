@@ -32,12 +32,26 @@ body.dark-mode #loader {
     background: #111;
     color: #eee;
 }
-/* body.dark-mode details p,
-summary {
+details {
+    margin-top: 30px;
+    padding: 15px;
+    border-radius: 8px;
+    background-color: #f1f1f1;
+}
+body.dark-mode details p {
+    margin-top: 10px;
+    line-height: 1.6;
     color: rgba(255,255,255,0.9);
     background-color: rgba(30,30,30,0.8);
     transition: background-color 0.5s, color 0.3s ease;
-} */
+}
+body.dark-mode details summary {
+    font-weight: bold;
+    font-size: 16px;
+    color: rgba(255,255,255,0.9);
+    background-color: rgba(30,30,30,0.8);
+    transition: background-color 0.5s, color 0.3s ease;
+}
 details a{
     color: #4dd0e1;
 }
