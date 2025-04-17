@@ -38,6 +38,10 @@ details {
     border-radius: 8px;
     background-color: #f1f1f1;
 }
+body.dark-mode details {
+    background-color: rgba(30, 30, 30, 0.8);
+    transition: background-color 0.5s, color 0.3s ease;
+}
 body.dark-mode details p {
     margin-top: 10px;
     line-height: 1.6;
