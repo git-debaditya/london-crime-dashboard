@@ -32,7 +32,7 @@ body.dark-mode #loader {
     background: #111;
     color: #eee;
 }
-body.dark-mode details {
+body.dark-mode details p {
     background-color: rgba(255,255,255,0.9);
     color: rgba(30,30,30,0.8);
     transition: background-color 0.5s, color 0.3s ease;
@@ -238,7 +238,7 @@ color: rgba(255,255,255,0.9);
 border-radius: 12px;
 padding: 10px 20px;
 box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-transition: background-color 0.5s, color 0.3s ease;
+transition: background-color 0.3s, color 0.5s ease;
 }
 .dark-mode .controls {
 background-color: rgba(255,255,255,0.9);
