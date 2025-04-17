@@ -150,7 +150,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 .style("fill", d => colorScale(d.count))
                 .on("mouseover", (event, d) => {
                     tooltip.style("opacity", 1)
-                    .html(`<strong>${d.area}</strong> reported<br><b>${d.count.toLocaleString()} cases between Feb 2020 and Jan 2025.</b>`)
+                    .html(`<strong>${d.area}</strong> reported<br><b>${d.count.toLocaleString()} cases between Feb 2021 and Jan 2025.</b>`)
                     .style("left", `${event.pageX + 10}px`)
                     .style("top", `${event.pageY - 28}px`)
                     .style("opacity", 1);
